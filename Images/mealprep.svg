@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <style>
+    .line { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+    .icecube { fill: #b0e0e6; stroke: #999; }
+  </style>
+  <!-- Ice cube tray with frozen puree -->
+  <rect x="60" y="70" width="80" height="50" rx="3" class="line"/>
+  <!-- Cube dividers -->
+  <line x1="80" y1="70" x2="80" y2="120" class="line"/>
+  <line x1="100" y1="70" x2="100" y2="120" class="line"/>
+  <line x1="120" y1="70" x2="120" y2="120" class="line"/>
+  <!-- Frozen cubes -->
+  <rect x="62" y="72" width="15" height="15" rx="2" class="icecube"/>
+  <rect x="82" y="72" width="15" height="15" rx="2" class="icecube"/>
+  <rect x="102" y="72" width="15" height="15" rx="2" class="icecube"/>
+  <rect x="122" y="72" width="15" height="15" rx="2" class="icecube"/>
+  <!-- Label on tray -->
+  <text x="100" y="105" text-anchor="middle" font-size="8" fill="#333">PUREE</text>
+  <!-- Steam/smoke from cooking (top) -->
+  <path d="M70 65 Q65 55 70 45" class="line" stroke-dasharray="2,2"/>
+  <path d="M100 65 Q95 50 100 40" class="line" stroke-dasharray="2,2"/>
+  <path d="M130 65 Q125 55 130 45" class="line" stroke-dasharray="2,2"/>
+  <!-- Pot (background) -->
+  <path d="M50 40 L50 65 Q50 70 55 70 L145 70 Q150 70 150 65 L150 40" class="line"/>
+  <line x1="55" y1="40" x2="145" y2="40" class="line"/>
+  <!-- Blender (side) -->
+  <rect x="160" y="50" width="20" height="30" rx="2" class="line"/>
+  <path d="M165 50 L170 40 L185 40 L180 50" class="line"/>
+</svg>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Maker | Parenting Tricks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .coin {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+        .coin-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            backface-visibility: hidden;
+            overflow: hidden;
+        }
+        .coin-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .coin-mom {
+            z-index: 2;
+        }
+        .coin-dad {
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Parenting Tricks</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clothing.html">Clothing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="diapering.html">Diapering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="milestones.html">Milestones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="decision-maker.html">Decision Maker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-light py-5 mb-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Decision Maker</h1>
+            <p class="lead"> Baby wake up in the middle of the night? Flip the coin to see who goes and helps! Who gets to change the baby's diaper? Let the coin decide!</p>
+        </div>
+    </section>
+
+    <main class="container mb-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Coin Display -->
+                <div id="coin" class="coin mb-4">
+                    <div class="coin-face coin-mom">
+                        <img src="images/coin-flip-MOTHER.png" alt="Mom side of coin">
+                    </div>
+                    <div class="coin-face coin-dad">
+                        <img src="images/coin-flip-FATHER.png" alt="Dad side of coin">
+                    </div>
+                </div>
+
+                <!-- Result Display -->
+                <h2 id="result" class="mb-4 text-muted">Click the button to flip!</h2>
+
+                <!-- Flip Button -->
+                <button id="flipBtn" class="btn btn-warning btn-lg px-5">Flip Coin</button>
+
+                <!-- Stats -->
+                <div class="mt-5">
+                    <h5>Hero Count</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="mb-1">Mom</p>
+                            <h3 id="momCount">0</h3>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1">Dad</p>
+                            <h3 id="dadCount">0</h3>
+                        </div>
+                    </div>
+                    <button id="resetBtn" class="btn btn-sm btn-outline-secondary mt-3">Reset Stats</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p><a href="#top">Back to Top</a> | &copy; 2026 Parenting Tricks. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let mom = 0;
+        let dad = 0;
+        let isFlipping = false;
+        const coin = document.getElementById('coin');
+        const result = document.getElementById('result');
+        const flipBtn = document.getElementById('flipBtn');
+        const momCount = document.getElementById('momCount');
+        const dadCount = document.getElementById('dadCount');
+        const resetBtn = document.getElementById('resetBtn');
+
+        flipBtn.addEventListener('click', function() {
+            if (isFlipping) return; // Prevent multiple clicks during animation
+            isFlipping = true;
+
+            // Reset coin to 0deg instantly (no transition)
+            coin.style.transition = 'none';
+            coin.style.transform = 'rotateX(0deg)';
+            void coin.offsetWidth; // Trigger reflow
+            coin.style.transition = 'transform 1s ease-in-out';
+
+            // Random result
+            const isMom = Math.random() < 0.5;
+
+            // Set final rotation based on result (always spins)
+            if (isMom) {
+                coin.style.transform = 'rotateX(1800deg)';
+                result.textContent = 'Mom!';
+            } else {
+                coin.style.transform = 'rotateX(1980deg)';
+                result.textContent = 'Dad!';
+            }
+
+            // Wait for animation to end before counting
+            coin.addEventListener('transitionend', function handler() {
+                coin.removeEventListener('transitionend', handler);
+                if (isMom) {
+                    mom++;
+                    momCount.textContent = mom;
+                } else {
+                    dad++;
+                    dadCount.textContent = dad;
+                }
+                isFlipping = false;
+            });
+        });
+
+        resetBtn.addEventListener('click', function() {
+            mom = 0;
+            dad = 0;
+            momCount.textContent = mom;
+            dadCount.textContent = dad;
+            result.textContent = 'Click the button to flip!';
+            coin.style.transition = 'none';
+            coin.style.transform = 'rotateX(0deg)';
+            void coin.offsetWidth;
+            coin.style.transition = 'transform 1s ease-in-out';
+            isFlipping = false;
+        });
+    </script>
+</body>
+</html>

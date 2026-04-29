@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <style>
+    .line { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+    .food { fill: #f4a261; }
+    .bowl { fill: #e76f51; }
+  </style>
+  <!-- Baby in high chair -->
+  <circle cx="100" cy="50" r="15" class="line"/>
+  <path d="M100 65 L100 100" class="line"/>
+  <path d="M100 75 L80 65" class="line"/>
+  <path d="M100 75 L120 65" class="line"/>
+  <path d="M100 100 L85 120" class="line"/>
+  <path d="M100 100 L115 120" class="line"/>
+  <!-- High chair -->
+  <rect x="85" y="100" width="30" height="20" class="line"/>
+  <path d="M85 120 L65 150" class="line"/>
+  <path d="M115 120 L135 150" class="line"/>
+  <!-- Bowl with spoon -->
+  <ellipse cx="140" cy="90" rx="20" ry="8" class="line bowl"/>
+  <path d="M140 82 L140 60" class="line"/>
+  <circle cx="140" cy="57" r="5" class="food"/>
+  <path d="M140 60 L150 50" class="line"/>
+  <!-- Steaming food -->
+  <path d="M130 78 Q135 73 140 78" class="line" stroke-dasharray="2,2"/>
+  <path d="M138 78 Q143 73 148 78" class="line" stroke-dasharray="2,2"/>
+</svg>

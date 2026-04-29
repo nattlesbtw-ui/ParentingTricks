@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <style>
+    .line { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+  </style>
+  <!-- Toddler walking -->
+  <circle cx="100" cy="30" r="15" class="line"/>
+  <path d="M100 45 L100 85" class="line"/>
+  <!-- Arms up for balance -->
+  <path d="M100 55 L80 40" class="line"/>
+  <path d="M100 55 L120 45" class="line"/>
+  <!-- Walking legs -->
+  <path d="M100 85 L85 115" class="line"/>
+  <path d="M100 85 L115 110" class="line"/>
+  <!-- Feet -->
+  <ellipse cx="83" cy="118" rx="8" ry="4" class="line"/>
+  <ellipse cx="117" cy="113" rx="8" ry="4" class="line"/>
+  <!-- Wobbly lines for movement -->
+  <path d="M70 60 Q60 50 65 40" class="line" stroke-dasharray="3,3"/>
+  <path d="M130 55 Q140 45 135 35" class="line" stroke-dasharray="3,3"/>
+  <!-- Ground line -->
+  <line x1="60" y1="125" x2="140" y2="125" class="line"/>
+  <!-- Stars/sparkles for excitement -->
+  <circle cx="70" cy="20" r="2" class="line"/>
+  <circle cx="130" cy="25" r="2" class="line"/>
+  <line x1="70" y1="18" x2="70" y2="22" class="line"/>
+  <line x1="68" y1="20" x2="72" y2="20" class="line"/>
+  <line x1="130" y1="23" x2="130" y2="27" class="line"/>
+  <line x1="128" y1="25" x2="132" y2="25" class="line"/>
+</svg>

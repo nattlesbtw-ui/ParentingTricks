@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <style>
+    .line { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+  </style>
+  <!-- Parent and baby talking -->
+  <!-- Baby -->
+  <circle cx="75" cy="45" r="15" class="line"/>
+  <path d="M75 60 L75 90" class="line"/>
+  <path d="M75 70 L60 60" class="line"/>
+  <path d="M75 70 L90 60" class="line"/>
+  <path d="M75 90 L65 115" class="line"/>
+  <path d="M75 90 L85 115" class="line"/>
+  <!-- Baby speech bubble -->
+  <path d="M90 35 Q95 25 110 25 L130 25 Q140 25 140 35 L140 45 Q140 55 130 55 L110 55 Q105 55 105 50 L95 50 Z" class="line"/>
+  <text x="115" y="40" text-anchor="middle" font-size="8" fill="#333">ma-</text>
+  <text x="115" y="50" text-anchor="middle" font-size="8" fill="#333">ma!</text>
+  <!-- Parent -->
+  <circle cx="140" cy="45" r="18" class="line"/>
+  <path d="M140 63 L140 95" class="line"/>
+  <path d="M140 73 L125 63" class="line"/>
+  <path d="M140 73 L155 63" class="line"/>
+  <path d="M140 95 L130 120" class="line"/>
+  <path d="M140 95 L150 120" class="line"/>
+  <!-- Parent speech bubble -->
+  <path d="M120 20 Q115 10 100 10 L75 10 Q65 10 65 20 L65 35 Q65 45 75 45 L95 45 Q100 45 100 40 L115 40 Z" class="line"/>
+  <text x="90" y="25" text-anchor="middle" font-size="7" fill="#333">Good</text>
+  <text x="90" y="35" text-anchor="middle" font-size="7" fill="#333">job!</text>
+  <!-- Floor -->
+  <line x1="50" y1="125" x2="155" y2="125" class="line"/>
+</svg>

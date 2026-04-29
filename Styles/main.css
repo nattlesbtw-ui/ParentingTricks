@@ -1,0 +1,41 @@
+/* Parenting Tricks - Main Stylesheet */
+
+/* Body padding for fixed navbar */
+body {
+    padding-top: 70px;
+    background: #a3ceef !important ;
+}
+
+/* Hero section gradient (used on index.html) */
+.hero {
+    background: linear-gradient(rgba(13, 110, 253, 0.1), rgba(13, 110, 253, 0.05));
+}
+
+/* Responsive iframe container for video embeds */
+.ratio-16x9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.ratio-16x9 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+footer a[href="#top"] {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+}
+footer a[href="#top"]:hover {
+    text-decoration: underline;
+}
+
+/* Header title fonts */
+.navbar {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

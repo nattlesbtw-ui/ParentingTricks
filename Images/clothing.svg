@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150">
+  <style>
+    .line { fill: none; stroke: #333; stroke-width: 2; stroke-linecap: round; }
+    .shirt { fill: #87ceeb; }
+  </style>
+  <!-- Baby standing -->
+  <circle cx="100" cy="35" r="15" class="line"/>
+  <path d="M100 50 L100 85" class="line"/>
+  <path d="M100 60 L80 50" class="line"/>
+  <path d="M100 60 L120 50" class="line"/>
+  <path d="M100 85 L90 115" class="line"/>
+  <path d="M100 85 L110 115" class="line"/>
+  <!-- Onesie/shirt -->
+  <path d="M85 50 L85 75 Q85 80 90 80 L110 80 Q115 80 115 75 L115 50" class="line shirt"/>
+  <line x1="85" y1="55" x2="115" y2="55" class="line"/>
+  <!-- Arms through shirt -->
+  <path d="M85 55 L80 50" class="line" stroke-dasharray="2,2"/>
+  <path d="M115 55 L120 50" class="line" stroke-dasharray="2,2"/>
+  <!-- Zipper -->
+  <line x1="100" y1="50" x2="100" y2="78" class="line" stroke-dasharray="3,2"/>
+  <!-- Booties -->
+  <path d="M88 115 L88 120 L92 120 L92 115" class="line"/>
+  <path d="M108 115 L108 120 L112 120 L112 115" class="line"/>
+  <!-- Hood -->
+  <path d="M90 25 Q100 15 110 25" class="line"/>
+</svg>
